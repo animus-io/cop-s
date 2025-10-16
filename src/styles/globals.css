@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --vibrant-green: #3CB371;
+  --sky-blue: #00AEEF;
+  --bright-yellow: #FFD93D;
+  --coral-orange: #FF6F61;
+  --creative-purple: #9B51E0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Custom utility classes for brand colors */
+.bg-vibrant-green {
+  background-color: var(--vibrant-green);
+}
+
+.bg-sky-blue {
+  background-color: var(--sky-blue);
+}
+
+.bg-bright-yellow {
+  background-color: var(--bright-yellow);
+}
+
+.bg-coral-orange {
+  background-color: var(--coral-orange);
+}
+
+.bg-creative-purple {
+  background-color: var(--creative-purple);
+}
+
+.text-vibrant-green {
+  color: var(--vibrant-green);
+}
+
+.text-sky-blue {
+  color: var(--sky-blue);
+}
+
+.text-coral-orange {
+  color: var(--coral-orange);
+}
+
+.text-creative-purple {
+  color: var(--creative-purple);
+}
+
+.border-vibrant-green {
+  border-color: var(--vibrant-green);
+}
