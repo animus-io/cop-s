@@ -92,7 +92,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
             Get in Touch
           </h1>
           <p className="text-xl text-gray-700 mb-6">
-            Have questions about COP Simulation Pakistan? We're here to help and would love to hear from you.
+            Have questions about COP Simulation Pakistan? Hammad We're here to help and would love to hear from you.
           </p>
           <div className="flex justify-center space-x-6 text-sm text-gray-600">
             <div className="flex items-center space-x-2">
