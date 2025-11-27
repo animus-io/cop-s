@@ -30,18 +30,9 @@ export function Layout({ children, currentPage, onNavigate }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-sm">COP</span>
-              </div>
-              <div>
-                <h1 className="text-lg font-semibold text-gray-900">
-                  COP Simulation
-                </h1>
-                <p className="text-xs text-green-600 font-medium">
-                  Pakistan 2025
-                </p>
-              </div>
+
+            <div className="flex items-center h-10">
+              <img src="/assets/logo.png" alt="logo" className="h-12" />
             </div>
 
             {/* Desktop Navigation */}
@@ -161,7 +152,7 @@ export function Layout({ children, currentPage, onNavigate }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center space-x-2 mb-4">
+              {/* <div className="flex items-center space-x-2 mb-4">
                 <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
                   <span className="text-white font-bold text-sm">COP</span>
                 </div>
@@ -173,6 +164,9 @@ export function Layout({ children, currentPage, onNavigate }: LayoutProps) {
                     Where Young Voices Shape Climate Action
                   </p>
                 </div>
+              </div> */}
+              <div className="flex items-center h-10 mb-4">
+                <img src="/assets/logo-white.png" alt="logo" className="h-12" />
               </div>
               <p className="text-gray-300 mb-4">
                 Empowering youth across Pakistan to engage in climate action
