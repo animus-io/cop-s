@@ -1,9 +1,18 @@
-import React from 'react';
-import { Button } from './ui/button';
-import { Card, CardContent } from './ui/card';
-import { Badge } from './ui/badge';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { ArrowRight, Users, BookOpen, Megaphone, FileText, Shield, Globe, Award } from 'lucide-react';
+import React from "react";
+import { Button } from "./ui/button";
+import { Card, CardContent } from "./ui/card";
+import { Badge } from "./ui/badge";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import {
+  ArrowRight,
+  Users,
+  BookOpen,
+  Megaphone,
+  FileText,
+  Shield,
+  Globe,
+  Award,
+} from "lucide-react";
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -13,36 +22,58 @@ export function HomePage({ onNavigate }: HomePageProps) {
   const phases = [
     {
       icon: BookOpen,
-      title: 'Learn',
-      description: 'Climate science, policy frameworks, and negotiation skills through interactive workshops',
-      color: 'bg-blue-500 text-white shadow-lg'
+      title: "Learn",
+      description:
+        "Climate science, policy frameworks, and negotiation skills through interactive workshops",
+      color: "bg-blue-500 text-white shadow-lg",
     },
     {
       icon: Users,
-      title: 'Simulate',
-      description: 'Engage in mock COP negotiations representing different countries and stakeholders',
-      color: 'bg-green-500 text-white shadow-lg'
+      title: "Simulate",
+      description:
+        "Engage in mock COP negotiations representing different countries and stakeholders",
+      color: "bg-green-500 text-white shadow-lg",
     },
     {
       icon: Megaphone,
-      title: 'Artivism',
-      description: 'Create compelling advocacy content through art, media, and creative expression',
-      color: 'bg-purple-500 text-white shadow-lg'
+      title: "Artivism",
+      description:
+        "Create compelling advocacy content through art, media, and creative expression",
+      color: "bg-purple-500 text-white shadow-lg",
     },
     {
       icon: FileText,
-      title: 'Policy',
-      description: 'Develop actionable policy recommendations for real-world climate challenges',
-      color: 'bg-orange-500 text-white shadow-lg'
-    }
+      title: "Policy",
+      description:
+        "Develop actionable policy recommendations for real-world climate challenges",
+      color: "bg-orange-500 text-white shadow-lg",
+    },
   ];
 
   const partners = [
-    { name: 'Save the Children', role: 'Lead Partner' },
-    { name: 'Pakistan Red Crescent Society', role: 'Implementation Partner' },
-    { name: 'Climate Youth Pakistan', role: 'Youth Network' },
-    { name: 'Green Growth Initiative', role: 'Technical Support' },
-    { name: 'UN Youth Climate', role: 'Global Partner' },
+    {
+      name: "Save the Children",
+      role: "Lead Partner",
+      logo: "/assets/save-children-logo.png",
+    },
+    {
+      name: "Sustainability First",
+      role: "Implementation Partner",
+      logo: "/assets/sustainability-first-logo.png",
+    },
+
+    {
+      name: "Ministry of Climate Change and Enviormental Restoration",
+      //  role: "Youth Network",
+      logo: "/assets/mocc-logo.png",
+    },
+    {
+      name: "Pak Mission Society",
+      //  role: "Youth Network",
+      logo: "/assets/pak-mission-society-logo.webp",
+    },
+    // { name: "Green Growth Initiative", role: "Technical Support" },
+    // { name: "UN Youth Climate", role: "Global Partner" },
   ];
 
   return (
@@ -54,54 +85,58 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
-                <Badge variant="secondary" className="bg-yellow-400 text-gray-900 border-0 shadow-lg font-bold animate-pulse">
-                  🚀 Registration Open Hammad • Apply by March 15, 2025
+                <Badge
+                  variant="secondary"
+                  className="bg-yellow-400 text-gray-900 border-0 shadow-lg font-bold animate-pulse"
+                >
+                  🚀 Registration Open
                 </Badge>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                  COP Simulation Pakistan{' '}
+                  COP Simulation Pakistan{" "}
                   <span className="text-yellow-400 drop-shadow-lg">2025</span>
                 </h1>
+                <p className="text-lg text-white/90 max-w-2xl leading-relaxed drop-shadow-sm">
+                  Join 500+ young climate advocates across Pakistan in the
+                  largest youth-led climate simulation. Learn, simulate, create,
+                  and influence real climate policy.
+                </p>
                 <p className="text-xl text-white/95 leading-relaxed font-medium drop-shadow-sm">
                   Where Young Voices Shape Climate Action
                 </p>
-                <p className="text-lg text-white/90 max-w-2xl leading-relaxed drop-shadow-sm">
-                  Join 500+ young climate advocates across Pakistan in the largest youth-led climate simulation. 
-                  Learn, simulate, create, and influence real climate policy.
-                </p>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
-                  onClick={() => onNavigate('apply')}
-                  className="bg-white text-green-600 hover:bg-green-600 hover:text-white px-8 py-6 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 font-bold rounded-xl border-2 border-white hover:border-green-600 transform hover:scale-105"
+                <Button
+                  size="lg"
+                  onClick={() => onNavigate("apply")}
+                  className="cursor-pointer bg-white text-green-600 hover:bg-green-600 hover:text-white px-8 py-6 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 font-bold rounded-xl transform hover:scale-105"
                 >
                   Apply Now
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
-                  onClick={() => onNavigate('apply')}
-                  className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-6 text-lg font-bold rounded-xl transition-all duration-300 transform hover:scale-105"
+                  onClick={() => onNavigate("apply")}
+                  className="cursor-pointer text-blue-600 bg-white hover:bg-blue-600 hover:text-white px-8 py-6 text-lg font-bold rounded-xl transition-all duration-300 transform hover:scale-105"
                 >
                   Volunteer
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="lg"
-                  onClick={() => onNavigate('about')}
-                  className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-6 text-lg font-bold rounded-xl transition-all duration-300 transform hover:scale-105"
+                  onClick={() => onNavigate("about")}
+                  className="cursor-pointer text-orange-600 hover:bg-orange-600 hover:text-white px-8 py-6 text-lg font-bold rounded-xl transition-all duration-300 transform hover:scale-105"
                 >
                   Partner with Us
                 </Button>
               </div>
             </div>
-            
+
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1570210661710-e5549821e248?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3V0aCUyMGNsaW1hdGUlMjBhY3Rpb258ZW58MXx8fHwxNzU5NDk3ODUxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src="/assets/hero-banner.jpg"
                   alt="Youth climate activists"
                   className="w-full h-96 object-cover"
                 />
@@ -125,29 +160,42 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Four-Phase Journey</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Four-Phase Journey
+            </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Experience a comprehensive climate action program designed to build knowledge, 
-              skills, and real-world impact.
+              Experience a comprehensive climate action program designed to
+              build knowledge, skills, and real-world impact.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {phases.map((phase, index) => {
               const Icon = phase.icon;
               return (
-                <Card key={phase.title} className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-white/90 backdrop-blur-sm">
+                <Card
+                  key={phase.title}
+                  className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg bg-white/90 backdrop-blur-sm"
+                >
                   <CardContent className="p-6">
                     <div className="text-center space-y-4">
-                      <div className={`w-20 h-20 rounded-3xl ${phase.color} mx-auto flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
+                      <div
+                        className={`w-20 h-20 rounded-3xl ${phase.color} mx-auto flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}
+                      >
                         <Icon className="w-10 h-10" />
                       </div>
                       <div className="space-y-2">
                         <div className="flex items-center justify-center space-x-2">
-                          <span className="text-sm font-medium text-gray-500">Phase {index + 1}</span>
+                          <span className="text-sm font-medium text-gray-500">
+                            Phase {index + 1}
+                          </span>
                         </div>
-                        <h3 className="text-xl font-bold text-charcoal">{phase.title}</h3>
-                        <p className="text-charcoal/70 font-medium">{phase.description}</p>
+                        <h3 className="text-xl font-bold text-charcoal">
+                          {phase.title}
+                        </h3>
+                        <p className="text-charcoal/70 font-medium">
+                          {phase.description}
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -163,13 +211,19 @@ export function HomePage({ onNavigate }: HomePageProps) {
         <div className="absolute inset-0 bg-white/80"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <Badge variant="secondary" className="bg-gradient-to-r from-purple-600 to-orange-500 text-white border-0 mb-4 shadow-lg animate-pulse">
+            <Badge
+              variant="secondary"
+              className="bg-gradient-to-r from-purple-600 to-orange-500 text-white border-0 mb-4 shadow-lg animate-pulse"
+            >
               🏆 COP Simulation Pakistan 2024 Success Story
             </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Building on Proven Success</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Building on Proven Success
+            </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto font-medium">
-              Our 2024 pilot program proved that Pakistani youth are ready to lead climate action. 
-              Here's how we made an impact across Lahore and Karachi.
+              Our 2024 pilot program proved that Pakistani youth are ready to
+              lead climate action. Here's how we made an impact across Lahore
+              and Karachi.
             </p>
           </div>
 
@@ -183,16 +237,34 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     <Award className="w-10 h-10 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">Policy Impact Achievement</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                      Policy Impact Achievement
+                    </h3>
                     <p className="text-gray-700 mb-4">
-                      Our participants developed 8 comprehensive policy recommendations that were 
-                      officially presented to the Climate Change Ministry and Provincial Environmental 
+                      Our participants developed 8 comprehensive policy
+                      recommendations that were officially presented to the
+                      Climate Change Ministry and Provincial Environmental
                       Protection Agencies.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">Water Conservation</Badge>
-                      <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">Urban Planning</Badge>
-                      <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200">Youth Engagement</Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-green-50 text-green-700 border-green-200"
+                      >
+                        Water Conservation
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-blue-50 text-blue-700 border-blue-200"
+                      >
+                        Urban Planning
+                      </Badge>
+                      <Badge
+                        variant="outline"
+                        className="bg-purple-50 text-purple-700 border-purple-200"
+                      >
+                        Youth Engagement
+                      </Badge>
                     </div>
                   </div>
                 </div>
@@ -204,7 +276,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <CardContent className="p-6">
                 <div className="relative mb-4">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1574701148212-8518049c7b0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMHdvbWFuJTIwc21pbGluZyUyMGluZGlhfGVufDF8fHx8MTc1OTQ5Nzg1M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                    src="/assets/logo-flat-black.png"
                     alt="2024 COP Simulation participant"
                     className="w-full h-48 object-cover rounded-xl"
                   />
@@ -213,8 +285,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   </div>
                 </div>
                 <blockquote className="text-gray-700 italic mb-3">
-                  "COP Simulation changed how I see my role in fighting climate change. 
-                  I went from feeling helpless to leading a water conservation project in my school."
+                  "COP Simulation changed how I see my role in fighting climate
+                  change. I went from feeling helpless to leading a water
+                  conservation project in my school."
                 </blockquote>
                 <cite className="text-sm text-gray-600 font-semibold">
                   - Zainab Ahmed, Age 17, Lahore Chapter
@@ -228,29 +301,44 @@ export function HomePage({ onNavigate }: HomePageProps) {
             <CardContent className="p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Media Recognition</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    Media Recognition
+                  </h3>
                   <p className="text-gray-700 mb-6">
-                    The 2024 program gained national attention for its innovative approach to youth climate education 
-                    and was featured across multiple media platforms.
+                    The 2024 program gained national attention for its
+                    innovative approach to youth climate education and was
+                    featured across multiple media platforms.
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">
                       <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                        <span className="text-red-600 font-bold text-xs">GEO</span>
+                        <span className="text-red-600 font-bold text-xs">
+                          GEO
+                        </span>
                       </div>
-                      <span className="text-gray-700">Featured on Geo News Prime Time</span>
+                      <span className="text-gray-700">
+                        Featured on Geo News Prime Time
+                      </span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                        <span className="text-blue-600 font-bold text-xs">DWN</span>
+                        <span className="text-blue-600 font-bold text-xs">
+                          DWN
+                        </span>
                       </div>
-                      <span className="text-gray-700">Dawn Newspaper Special Report</span>
+                      <span className="text-gray-700">
+                        Dawn Newspaper Special Report
+                      </span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                        <span className="text-green-600 font-bold text-xs">PTV</span>
+                        <span className="text-green-600 font-bold text-xs">
+                          PTV
+                        </span>
                       </div>
-                      <span className="text-gray-700">PTV World Documentary</span>
+                      <span className="text-gray-700">
+                        PTV World Documentary
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -261,7 +349,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     className="w-full h-64 object-cover rounded-xl shadow-lg"
                   />
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <span className="text-sm font-semibold text-gray-800">Karachi Final Event</span>
+                    <span className="text-sm font-semibold text-gray-800">
+                      Karachi Final Event
+                    </span>
                   </div>
                 </div>
               </div>
@@ -273,7 +363,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
             <Card className="bg-gradient-to-br from-gray-50 to-gray-100 border-0 shadow-lg">
               <CardContent className="p-6">
                 <div className="text-center mb-4">
-                  <Badge variant="outline" className="bg-gray-200 text-gray-700">2024 Pilot</Badge>
+                  <Badge
+                    variant="outline"
+                    className="bg-gray-200 text-gray-700"
+                  >
+                    2024 Pilot
+                  </Badge>
                 </div>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
@@ -289,7 +384,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     <span className="font-bold text-gray-900">8 weeks</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-700">Policy Recommendations</span>
+                    <span className="text-gray-700">
+                      Policy Recommendations
+                    </span>
                     <span className="font-bold text-gray-900">8</span>
                   </div>
                 </div>
@@ -299,7 +396,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
             <Card className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-200 shadow-xl">
               <CardContent className="p-6">
                 <div className="text-center mb-4">
-                  <Badge className="bg-green-600 text-white">2025 Scale-Up</Badge>
+                  <Badge className="bg-green-600 text-white">
+                    2025 Scale-Up
+                  </Badge>
                 </div>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
@@ -330,12 +429,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 Ready to be Part of Our 2025 Success Story?
               </h3>
               <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-                Join hundreds of Pakistani youth who are already making a difference. 
-                Our 2025 program builds on proven success with enhanced curriculum and expanded reach.
+                Join hundreds of Pakistani youth who are already making a
+                difference. Our 2025 program builds on proven success with
+                enhanced curriculum and expanded reach.
               </p>
-              <Button 
-                size="lg" 
-                onClick={() => onNavigate('apply')}
+              <Button
+                size="lg"
+                onClick={() => onNavigate("apply")}
                 className="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Join COP Simulation 2025
@@ -351,32 +451,55 @@ export function HomePage({ onNavigate }: HomePageProps) {
         <div className="absolute inset-0 bg-gradient-to-r from-green-50 via-blue-50 to-purple-50 opacity-50"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <Badge variant="secondary" className="bg-yellow-400 text-gray-900 border-0 mb-4 font-bold shadow-lg">
+            <Badge
+              variant="secondary"
+              className="bg-yellow-400 text-gray-900 border-0 mb-4 font-bold shadow-lg"
+            >
               📊 2024 Pilot Program Results
             </Badge>
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">Proven Impact</h2>
-            <p className="text-gray-700 font-medium">Building on our successful 2024 pilot program</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              Proven Impact
+            </h2>
+            <p className="text-gray-700 font-medium">
+              Building on our successful 2024 pilot program
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-green-600 mb-2">100+</div>
-              <div className="text-gray-900 font-medium">Youth Engaged (2024)</div>
-              <div className="text-sm text-gray-600 mt-1">Now scaling to 500+</div>
+              <div className="text-4xl font-bold text-green-600 mb-2">300+</div>
+              <div className="text-gray-900 font-medium">
+                Youth Engaged (2024)
+              </div>
+              <div className="text-sm text-gray-600 mt-1">
+                Now scaling to 500+
+              </div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">2</div>
-              <div className="text-gray-900 font-medium">Cities Covered (2024)</div>
-              <div className="text-sm text-gray-600 mt-1">Expanding to 5 cities</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">4</div>
+              <div className="text-gray-900 font-medium">
+                Cities Covered (2024)
+              </div>
+              <div className="text-sm text-gray-600 mt-1">
+                Expanding to 5 cities
+              </div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-orange-600 mb-2">8</div>
-              <div className="text-gray-900 font-medium">Policy Recommendations</div>
-              <div className="text-sm text-gray-600 mt-1">Presented to government</div>
+              <div className="text-4xl font-bold text-orange-600 mb-2">4</div>
+              <div className="text-gray-900 font-medium">
+                Policy Recommendations
+              </div>
+              <div className="text-sm text-gray-600 mt-1">
+                Presented to government
+              </div>
             </div>
             <div>
               <div className="text-4xl font-bold text-purple-600 mb-2">95%</div>
-              <div className="text-gray-900 font-medium">Participant Satisfaction</div>
-              <div className="text-sm text-gray-600 mt-1">Continued engagement</div>
+              <div className="text-gray-900 font-medium">
+                Participant Satisfaction
+              </div>
+              <div className="text-sm text-gray-600 mt-1">
+                Continued engagement
+              </div>
             </div>
           </div>
         </div>
@@ -386,21 +509,43 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Partners</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              Our Partners
+            </h2>
             <p className="text-gray-600">
-              Collaborating with leading organizations to amplify youth climate action
+              Collaborating with leading organizations to amplify youth climate
+              action
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {partners.map((partner) => (
-              <Card key={partner.name} className="text-center p-6 hover:shadow-md transition-shadow">
-                <div className="w-16 h-16 bg-gray-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-gray-400">
-                    {partner.name.split(' ').map(word => word[0]).join('')}
-                  </span>
+              <Card
+                key={partner.name}
+                className="text-center px-2 py-6 hover:shadow-md transition-shadow"
+              >
+                <div
+                  className="w-[120px] h-[120px] bg-gray-100 rounded-full p-4 mx-auto mb-4 flex items-center justify-center overflow-hidden"
+                  style={{ height: "100px", width: "100px" }}
+                >
+                  {partner?.logo ? (
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="w-full h-full object-contain"
+                    />
+                  ) : (
+                    <span className="text-2xl font-bold text-gray-400">
+                      {partner.name
+                        .split(" ")
+                        .map((word) => word[0])
+                        .join("")}
+                    </span>
+                  )}
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-1">{partner.name}</h4>
+                <h4 className="font-semibold text-gray-900 mb-1">
+                  {partner.name}
+                </h4>
                 <p className="text-sm text-gray-600">{partner.role}</p>
               </Card>
             ))}
@@ -414,14 +559,17 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="flex items-center justify-center mb-6">
             <Shield className="w-12 h-12 text-blue-600" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Safe & Inclusive Environment</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            Safe & Inclusive Environment
+          </h2>
           <p className="text-lg text-gray-700 mb-6">
-            We prioritize the safety and wellbeing of all participants. Our comprehensive safeguarding 
-            policies ensure a secure, inclusive environment for learning and growth.
+            We prioritize the safety and wellbeing of all participants. Our
+            comprehensive safeguarding policies ensure a secure, inclusive
+            environment for learning and growth.
           </p>
-          <Button 
-            variant="outline" 
-            onClick={() => onNavigate('safeguarding')}
+          <Button
+            variant="outline"
+            onClick={() => onNavigate("safeguarding")}
             className="border-blue-600 text-blue-600 hover:bg-blue-50"
           >
             Learn About Our Safeguarding
@@ -430,29 +578,33 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 via-orange-500 to-yellow-400 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg">
+
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute -top-20 left-0 bottom-0 max-w-screen-2xl">
+          <img src="/assets/new.jpg" className="h-[300px] object-contain" />
+        </div>
+        <div className="relative py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Ready to Shape Pakistan's Climate Future?
           </h2>
-          <p className="text-xl mb-8 text-white/95 drop-shadow-sm font-medium">
-            Join hundreds of young climate advocates in the most impactful youth climate program in Pakistan.
+          <p className="text-xl mb-8 text-white font-medium">
+            Join hundreds of young climate advocates in the most impactful youth
+            climate program in Pakistan.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              onClick={() => onNavigate('apply')}
-              className="bg-white text-green-600 hover:bg-green-600 hover:text-white px-8 py-6 text-lg font-bold rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 border-2 border-white hover:border-green-600"
+            <Button
+              size="lg"
+              onClick={() => onNavigate("apply")}
+              className="cursor-pointer bg-white text-green-600 hover:bg-green-600 hover:text-white px-8 py-6 text-lg font-bold rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 border-2 border-white hover:border-green-600"
             >
               Apply Now - It's Free!
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="lg"
-              onClick={() => onNavigate('chapters')}
-              className="border-2 border-white text-white hover:bg-white hover:text-purple-600 px-8 py-6 text-lg font-bold rounded-xl transition-all duration-300 transform hover:scale-105"
+              onClick={() => onNavigate("chapters")}
+              className="cursor-pointer border-2 border-white hover:bg-white hover:text-purple-600 px-8 py-6 text-lg font-bold rounded-xl transition-all duration-300 transform hover:scale-105"
             >
               Explore Chapters
             </Button>
