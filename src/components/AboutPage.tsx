@@ -50,24 +50,24 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
       logo: "STC",
     },
     {
-      name: "Pakistan Red Crescent Society",
+      name: "Sustainability First",
       role: "National Implementation Partner",
       description:
-        "Pakistan's premier humanitarian organization with extensive reach across all provinces and regions.",
+        "Pakistan's premier humanitarian organization with extensive reach across all provinces and regions. ",
       logo: "PRCS",
     },
     {
-      name: "Climate Youth Pakistan",
+      name: "Ministry of Climate Change & Environmental Coordination",
       role: "Youth Network Partner",
       description:
         "National youth climate movement connecting young activists and advocates across Pakistan.",
       logo: "CYP",
     },
     {
-      name: "Green Growth Initiative",
+      name: "McDonalds Pakistan",
       role: "Technical Advisory Partner",
       description:
-        "Climate policy think tank providing technical expertise on climate negotiations and policy frameworks.",
+        "Climate policy think tank providing technical expertise on climate negotiations and policy frameworks. ",
       logo: "GGI",
     },
   ];
@@ -287,22 +287,22 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               <div className="space-y-4">
                 {[
                   {
-                    name: "Dr. Ayesha Rahman",
+                    name: "Kunwar Talha Ali",
                     role: "Program Director",
-                    org: "Save the Children Pakistan",
+                    org: "Sustainability First",
                   },
                   {
-                    name: "Ahmed Hassan",
-                    role: "National Coordinator",
-                    org: "PRCS",
+                    name: "Aleezah Swaleh",
+                    role: "National Communications Coordinator",
+                    org: "Sustainability First",
                   },
                   {
                     name: "Fatima Ali",
                     role: "Youth Engagement Lead",
-                    org: "Climate Youth Pakistan",
+                    org: "Sustainability First",
                   },
                   {
-                    name: "Dr. Hassan Khan",
+                    name: "Syed Ali Jaffery",
                     role: "Safeguarding Director",
                     org: "Save the Children",
                   },
@@ -335,24 +335,9 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               <div className="space-y-4">
                 {[
                   {
-                    name: "Dr. Malik Amin Aslam",
-                    role: "Climate Policy Advisor",
-                    org: "Former Federal Minister",
-                  },
-                  {
-                    name: "Prof. Dr. Aisha Khan",
-                    role: "Technical Advisor",
-                    org: "LUMS Environmental Sciences",
-                  },
-                  {
-                    name: "Sarah Ahmed",
-                    role: "Youth Development Expert",
-                    org: "UNICEF Pakistan",
-                  },
-                  {
-                    name: "Ali Tauqeer Sheikh",
-                    role: "Sustainability Advisor",
-                    org: "LEAD Pakistan",
+                    name: "Romina Khurshid Alam",
+                    role: "Coordinator to PM on Climate Change & EC",
+                    org: "Member National Assembly",
                   },
                 ].map((member, index) => (
                   <div key={index} className="flex items-center space-x-4">
