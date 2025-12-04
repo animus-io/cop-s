@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import { Layout } from './components/Layout';
-import { HomePage } from './components/HomePage';
-import { ApplyPage } from './components/ApplyPage';
-import { ChaptersPage } from './components/ChaptersPage';
-import { AboutPage } from './components/AboutPage';
-import { SafeguardingPage } from './components/SafeguardingPage';
-import { FinalePage } from './components/FinalePage';
-import { ContactPage } from './components/ContactPage';
-import { ChapterDetailPage } from './components/ChapterDetailPage';
+import React, { useEffect, useState } from "react";
+import { Layout } from "./components/Layout";
+import { HomePage } from "./components/HomePage";
+import { ApplyPage } from "./components/ApplyPage";
+import { ChaptersPage } from "./components/ChaptersPage";
+import { AboutPage } from "./components/AboutPage";
+import { SafeguardingPage } from "./components/SafeguardingPage";
+import { FinalePage } from "./components/FinalePage";
+import { ContactPage } from "./components/ContactPage";
+import { ChapterDetailPage } from "./components/ChapterDetailPage";
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('home');
-  const [selectedChapter, setSelectedChapter] = useState<string>('');
+  const [currentPage, setCurrentPage] = useState("home");
+  const [selectedChapter, setSelectedChapter] = useState<string>("");
 
   const handleNavigate = (page: string, chapterId?: string) => {
     setCurrentPage(page);
@@ -20,23 +20,36 @@ export default function App() {
     }
   };
 
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag("config", "G-TMFMMRLXT3", {
+        page_path: "/" + currentPage,
+      });
+    }
+  }, [currentPage]);
+
   const renderPage = () => {
     switch (currentPage) {
-      case 'home':
+      case "home":
         return <HomePage onNavigate={handleNavigate} />;
-      case 'about':
+      case "about":
         return <AboutPage onNavigate={handleNavigate} />;
-      case 'chapters':
+      case "chapters":
         return <ChaptersPage onNavigate={handleNavigate} />;
-      case 'chapter-detail':
-        return <ChapterDetailPage chapterId={selectedChapter} onNavigate={handleNavigate} />;
-      case 'apply':
+      case "chapter-detail":
+        return (
+          <ChapterDetailPage
+            chapterId={selectedChapter}
+            onNavigate={handleNavigate}
+          />
+        );
+      case "apply":
         return <ApplyPage />;
-      case 'safeguarding':
+      case "safeguarding":
         return <SafeguardingPage onNavigate={handleNavigate} />;
-      case 'finale':
+      case "finale":
         return <FinalePage onNavigate={handleNavigate} />;
-      case 'contact':
+      case "contact":
         return <ContactPage onNavigate={handleNavigate} />;
       default:
         return <HomePage onNavigate={handleNavigate} />;
